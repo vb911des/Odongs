@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy 7th Monthsary!</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      font-family: 'Courier New', Courier, monospace;
+      color: #e91e63;
+      text-align: center;
+      padding: 40px;
+    }
+    .message {
+      font-size: 1.2em;
+      white-space: pre-wrap;
+      margin-top: 20px;
+      border: 2px dashed #e91e63;
+      padding: 20px;
+      display: inline-block;
+      background-color: #ffe4ec;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 Happy 7th Monthsary! 💘</h1>
+  <div class="message" id="msg"></div>
+
+  <audio autoplay loop controls>
+    <source src="RasaneKangen.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const message = `
+🎉 Happy 7th Monthsary! 🎉
+
+7 bulan bersama si paling typo, kadang absurd, kadang manja, kadang bikin sakit jiwa
+Tapi selalu ada canda tawa di tiap drama.
+
+typo dan sikap km tu kadang bikin senyum tapi kadang bikin bingung
+kayak cad linglung gitu kalau lagi ngerender 
+
+kalau dalam codingan tu kamu tuh kaya variabel tanpa deklarasi,
+nggak ketebak, tapi selalu ada di memori
+Kamu itu bug paling lucu di hidupku,
+yang gak pengen aku gebug, tapi cukup aku peluk. 💻💕
+
+Terima kasih udah jadi partner dan sumber kegilaanku di dunia yang fana ini.
+
+❤️ From me, your forever Hamster.
+`;
+
+    const msgElement = document.getElementById("msg");
+    let i = 0;
+    function typeWriter() {
+      if (i < message.length) {
+        msgElement.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    typeWriter();
+  </script>
+
+</body>
+</html>

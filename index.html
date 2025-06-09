@@ -103,7 +103,7 @@
 
   <h1>💘 Happy 7th Monthsary 💘</h1>
 
-  <button id="startBtn">🎧 Senggol aku dong sayang~~~ 💖</button>
+  <button id="startBtn">🎧 Putar lagu kita, Nana 💖</button>
 
   <div class="message" id="msg"></div>
 
@@ -150,4 +150,29 @@ Terima kasih udah jadi partner dan sumber kegilaanku di dunia yang fana ini.
       typeWriter();
     });
 
-    // Fungsi bikin love
+    // Fungsi bikin love jatuh random
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.textContent = '💙';
+      love.style.left = Math.random() * window.innerWidth + 'px';
+      love.style.animationDuration = (3 + Math.random() * 2) + 's'; // 3-5 detik jatuh
+      love.style.opacity = Math.random() * 0.7 + 0.3;
+      document.body.appendChild(love);
+
+      // Hapus love setelah animasi selesai
+      setTimeout(() => {
+        love.remove();
+      }, 5000);
+    }
+
+    // Buat 10 love jatuh setiap 1 detik
+    setInterval(() => {
+      for(let j = 0; j < 10; j++) {
+        createLove();
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
